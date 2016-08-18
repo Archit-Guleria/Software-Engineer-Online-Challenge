@@ -14,7 +14,7 @@ Samsung LED TV 51 inches,4,2,900,true
 
 SELECT brand FROM products WHERE price > 600            //QUERY
 
-brand                                                   //OUTPUT
+brand                                                    //OUTPUT
 2
 2
 4
