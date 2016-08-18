@@ -10,7 +10,10 @@ public class Sde
    
 static String max(String str)                                                   //Calculates maximum value of an attribute 
 {
-    return Collections.max(m.get(str));
+ TreeSet<Double> t=new TreeSet<Double>();
+ for(String sr:m.get(str))
+     t.add(Double.parseDouble(sr));
+ return t.last().toString();
 }
 
 
@@ -32,6 +35,7 @@ static ArrayList<Integer> Select(String str)
      sc.useDelimiter(",");
      while(sc.hasNext())
      aLs.add(sc.next());
+      sc.close();
      }
      int i=0;
       while(!aLs.isEmpty())
@@ -64,6 +68,7 @@ static ArrayList<Integer> Select(String str)
     String g=sc.next().trim();
     String comp=sc.next().trim();
     String op=str.substring(str.indexOf(g)+g.length(),str.indexOf(comp)).trim();
+     sc.close();
     int index=0;
     TreeSet<Integer> se;
     switch(op)
@@ -153,7 +158,6 @@ static ArrayList<Integer> Select(String str)
 
     static TreeSet<Integer> Where(String str)
     {
-    Scanner sc=new Scanner(str);
     TreeSet<Integer> set1=new TreeSet<Integer>();
     TreeSet<Integer> set2=new TreeSet<Integer>();
     
@@ -298,6 +302,7 @@ static ArrayList<Integer> Select(String str)
                 if(tst.compareTo("SELECT")==0)
                 sset=Select(s.next().trim());
             }
+            s.close();
             ListIterator<Integer> LI=sset.listIterator();
             while(LI.hasNext())
             {
