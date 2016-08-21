@@ -288,6 +288,7 @@ static ArrayList<Integer> Select(String str)                    //to select the 
                 TreeSet<Double> t=new TreeSet<Double>();
                 for(String sr:m.get(res))
                 t.add(Double.parseDouble(sr));
+               System.out.println("MAX("+res+")");
                System.out.println(t.last());
                System.exit(0);
                 }
@@ -304,6 +305,7 @@ static ArrayList<Integer> Select(String str)                    //to select the 
                 TreeSet<Double> t=new TreeSet<Double>();
                 for(String sr:m.get(res))
                 t.add(Double.parseDouble(sr));
+               System.out.println("MIN("+res+")");
                System.out.println(t.first());
                System.exit(0);
                 }
@@ -331,6 +333,8 @@ static ArrayList<Integer> Select(String str)                    //to select the 
                   System.out.print("UNIQ(");
                 else if(flag==2)
                   System.out.print("MAX(");
+                else if(flag==3)
+                  System.out.print("MIN(");
             System.out.print(AL.get(LI.next()));                                //prints the sub headings
                 if(flag==1||flag==2)
                   System.out.print(")"); 
